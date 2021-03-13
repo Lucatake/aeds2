@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 class Palindromo {
 
    public static boolean isFim(String s){
@@ -35,6 +36,8 @@ class Palindromo {
    }
 }
 =======
+=======
+>>>>>>> origin/master
 class Palindromo {
 
    public static boolean isFim(String s){
@@ -70,4 +73,7 @@ class Palindromo {
       }
    }
 }
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
