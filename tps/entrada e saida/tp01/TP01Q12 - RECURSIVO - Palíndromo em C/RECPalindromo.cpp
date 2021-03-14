@@ -25,7 +25,7 @@ bool isFim(char s[], int i)
     return (i == 3 && s[0] == 'F' && s[1] == 'I' && s[2] == 'M');
 }
 
-void main( )
+int main( )
 {
     int size = 0;
     char s[1000];
@@ -49,5 +49,5 @@ void main( )
         }
 
     }while (!isFim(s, size));
- 
+ return 0;
 }
