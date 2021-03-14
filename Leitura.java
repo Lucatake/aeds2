@@ -31,66 +31,119 @@ class Leitura {
 
         e.printStackTrace();
     }
-    
+
       return html;
    }
 
    public static String contagem(String html){
      String result = new String();
+     int x = 0;
      int[] somas = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
      for(int i = 0; i < html.length(); i++){
-       if(html.charAt(i) == 'a'){
-         somas[0] = somas[0] + 1;
-       } else if(html.charAt(i) == 'e'){
-         somas[1] = somas[1] + 1;
-       } else if(html.charAt(i) == 'i'){
-         somas[2] = somas[2] + 1;
-       } else if(html.charAt(i) == 'o'){
-         somas[3] = somas[3] + 1;
-       } else if(html.charAt(i) == 'u'){
-         somas[4] = somas[4] + 1;
-       } else if(html.charAt(i) == 'á'){
-         somas[5] = somas[5] + 1;
-       } else if(html.charAt(i) == 'é'){
-         somas[6] = somas[6] + 1;
-       } else if(html.charAt(i) == 'í'){
-         somas[7] = somas[7] + 1;
-       } else if(html.charAt(i) == 'ó'){
-         somas[8] = somas[8] + 1;
-       } else if(html.charAt(i) == 'ú'){
-         somas[9] = somas[9] + 1;
-       } else if(html.charAt(i) == 'à'){
-         somas[10] = somas[10] + 1;
-       } else if(html.charAt(i) == 'è'){
-         somas[11] = somas[11] + 1;
-       } else if(html.charAt(i) == 'ì'){
-         somas[12] = somas[12] + 1;
-       } else if(html.charAt(i) == 'ò'){
-         somas[13] = somas[13] + 1;
-       } else if(html.charAt(i) == 'ù'){
-         somas[14] = somas[14] + 1;
-       } else if(html.charAt(i) == 'ã'){
-         somas[15] = somas[15] + 1;
-       } else if(html.charAt(i) == 'õ'){
-         somas[16] = somas[16] + 1;
-       } else if(html.charAt(i) == 'â'){
-         somas[17] = somas[17] + 1;
-       } else if(html.charAt(i) == 'ê'){
-         somas[18] = somas[18] + 1;
-       } else if(html.charAt(i) == 'î'){
-         somas[19] = somas[19] + 1;
-       } else if(html.charAt(i) == 'ô'){
-         somas[20] = somas[20] + 1;
-       } else if(html.charAt(i) == 'û'){
-         somas[21] = somas[21] + 1;
-       } else if(html.charAt(i) == '<' && html.charAt(i+1) == 'b' && html.charAt(i+2) == 'r' && html.charAt(i+3) == '>'){
-         somas[23] = somas[23] + 1;
-       } else if(html.charAt(i) == '<' && html.charAt(i+1) == 't' && html.charAt(i+2) == 'a'&& html.charAt(i+2) == 'b'&& html.charAt(i+2) == 'l'&& html.charAt(i+2) == 'e' && html.charAt(i+3) == '>'){
-         somas[24] = somas[24] + 1;
-       } else if(html.charAt(i) > 'a' && html.charAt(i) <= 'z'){
-         somas[22] = somas[22] + 1;
-       }
+       
+       switch (html.charAt(i))
+            {
+              case 'a':
+                somas[0] += 1;
+                break;
+
+              case 'e':
+                somas[1] += 1;
+                break;
+          
+              case 'i':
+                somas[2] += 1;
+                break;
+
+              case 'o':
+                somas[3] += 1;
+                break;
+
+              case 'u':
+                somas[4] += 1;
+                break;
+
+              case 'á':
+                somas[5] += 1;
+                break;
+
+              case 'é':
+                somas[6] += 1;
+                break;
+                
+              case 'í':
+                somas[7] += 1;
+                break;
+
+              case 'ó':
+                somas[8] += 1;
+                break;
+
+              case 'ú':
+                somas[9] += 1;
+                break;
+
+              case 'à':
+                somas[10] += 1;
+                break;
+
+              case 'è':
+                somas[11] += 1;
+                break;
+                
+              case 'ì':
+                somas[12] += 1;
+                break;
+
+              case 'ò':
+                somas[13] += 1;
+                break;
+
+              case 'ù':
+                somas[14] += 1;
+                break;
+
+              case 'ã':
+                somas[15] += 1;
+                break;
+
+              case 'õ':
+                somas[16] += 1;
+                break;
+
+              case 'â':
+                somas[17] += 1;
+                break;
+
+              case 'ê':
+                somas[18] += 1;
+                break;
+                
+              case 'î':
+                somas[19] += 1;
+                break;
+
+              case 'ô':
+                somas[20] += 1;
+                break;
+
+              case 'û':
+                somas[21] += 1;
+                break;
+       
+              default: x = 1;
+                }
+              if(x == 1){
+                if(html.charAt(i) == '<' && html.charAt(i+1) == 'b' && html.charAt(i+2) == 'r' && html.charAt(i+3) == '>'){
+                  somas[23] = somas[23] + 1;
+                } else if(html.charAt(i) == '<' && html.charAt(i+1) == 't' && html.charAt(i+2) == 'a'&& html.charAt(i+2) == 'b'&& html.charAt(i+2) == 'l'&& html.charAt(i+2) == 'e' && html.charAt(i+3) == '>'){
+                  somas[24] = somas[24] + 1;
+                } else if(html.charAt(i) > 'a' && html.charAt(i) <= 'z'){
+                  somas[22] = somas[22] + 1;
+                }
+                x=0;
+            }
      }
 
      result = "a("+somas[0]+") e("+somas[1]+") i("+somas[2]+") o("+somas[3]+") u("+somas[4]+") á("+somas[5]+") é("+somas[6]+") í("+somas[7]+") ó("+somas[8]+") ú("+somas[9]+") à("+somas[10]+") è("+somas[11]+") ì("+somas[12]+") ò("+somas[13]+") ù("+somas[14]+") ã("+somas[15]+") ã("+somas[16]+") â("+somas[17]+") ê("+somas[18]+") î("+somas[19]+") ô("+somas[20]+") û("+somas[21]+") consoante("+somas[22]+") <br>("+somas[23]+") <table>("+somas[24]+") ";
