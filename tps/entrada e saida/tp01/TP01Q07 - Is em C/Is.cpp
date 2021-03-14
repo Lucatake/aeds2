@@ -9,7 +9,7 @@ bool isFim(char s[], int i){
 bool allVogal(char s[], int size){
     bool result = true;
     bool vog = false;
-    char vogais[10] = "aeiouAEIOU";
+    char vogais[100] = "aeiouAEIOU";
     int j = 0;
     for(int i = 0; i < size; i++){
       j = 0;
@@ -34,8 +34,8 @@ bool allVogal(char s[], int size){
 bool allConsonant(char s[], int size){
     bool result = true;
     bool vog = false;
-    char vogais[10] = "aeiouAEIOU";
-    char num[10] = "0123456789";
+    char vogais[100] = "aeiouAEIOU";
+    char num[100] = "0123456789";
 
     int j = 0;
     for(int i = 0; i < size; i++){
@@ -61,7 +61,7 @@ bool allConsonant(char s[], int size){
 bool allInt(char s[], int size){
     bool result = true;
     bool n = false;
-    char nums[10] = "0123456789";
+    char nums[100] = "0123456789";
     int j = 0;
 
     for(int i = 0; i < size; i++){
@@ -88,7 +88,7 @@ bool allReal(char s[], int size){
     bool result = true;
     bool n = false;
     bool point = false;
-    char nums[10] = "0123456789";
+    char nums[100] = "0123456789";
     int j = 0;
 
     for(int i = 0; i < size; i++){
