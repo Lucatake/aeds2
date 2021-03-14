@@ -42,93 +42,93 @@ class Leitura {
 
      for(int i = 0; i < html.length(); i++){
        
-       switch (html.charAt(i))
+       switch ((int)html.charAt(i))
             {
-              case 'a':
+              case 97:
                 somas[0] += 1;
                 break;
 
-              case 'e':
+              case 101:
                 somas[1] += 1;
                 break;
           
-              case 'i':
+              case 105:
                 somas[2] += 1;
                 break;
 
-              case 'o':
+              case 111:
                 somas[3] += 1;
                 break;
 
-              case 'u':
+              case 117:
                 somas[4] += 1;
                 break;
 
-              case 'á':
+              case 160:
                 somas[5] += 1;
                 break;
 
-              case 'é':
+              case 130:
                 somas[6] += 1;
                 break;
                 
-              case 'í':
+              case 161:
                 somas[7] += 1;
                 break;
 
-              case 'ó':
+              case 162:
                 somas[8] += 1;
                 break;
 
-              case 'ú':
+              case 163:
                 somas[9] += 1;
                 break;
 
-              case 'à':
+              case 133:
                 somas[10] += 1;
                 break;
 
-              case 'è':
+              case 138:
                 somas[11] += 1;
                 break;
                 
-              case 'ì':
+              case 141:
                 somas[12] += 1;
                 break;
 
-              case 'ò':
+              case 149:
                 somas[13] += 1;
                 break;
 
-              case 'ù':
+              case 151:
                 somas[14] += 1;
                 break;
 
-              case 'ã':
+              case 198:
                 somas[15] += 1;
                 break;
 
-              case 'õ':
+              case 228:
                 somas[16] += 1;
                 break;
 
-              case 'â':
+              case 131:
                 somas[17] += 1;
                 break;
 
-              case 'ê':
+              case 136:
                 somas[18] += 1;
                 break;
                 
-              case 'î':
+              case 140:
                 somas[19] += 1;
                 break;
 
-              case 'ô':
+              case 147:
                 somas[20] += 1;
                 break;
 
-              case 'û':
+              case 150:
                 somas[21] += 1;
                 break;
        
