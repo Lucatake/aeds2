@@ -12,19 +12,21 @@ class Leitura {
 
    public static String html(String link){
       String html = new String();
-
+      
       try {
-      URL u = new URL(link);
-      URLConnection uc = u.openConnection();
-      InputStreamReader isr = new InputStreamReader(uc.getInputStream());
-      BufferedReader br = new BufferedReader(isr);
+        URL u = new URL(link);
+        URLConnection uc = u.openConnection();
+        InputStreamReader isr = new InputStreamReader(uc.getInputStream());
+        BufferedReader br = new BufferedReader(isr);
 
 
-      String linha = br.readLine(); 
+        String linha = br.readLine(); 
 
-      while (linha != null) { 
-        html = html + br.readLine();
-      } 
+        while (linha != null) { 
+          html = html + br.readLine();
+        } 
+        br.close();
+        isr.close();
       }
 
       catch (IOException e) {
@@ -38,11 +40,11 @@ class Leitura {
    public static String contagem(String html){
      String result = new String();
      int x = 0;
-     int[] somas = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+     int[] somas = new int[1000];
 
      for(int i = 0; i < html.length(); i++){
-       
-       switch ((int)html.charAt(i))
+       int a = (int)html.charAt(i);
+       switch (a)
             {
               case 97:
                 somas[0] += 1;
@@ -163,8 +165,8 @@ class Leitura {
 
       //Para cada linha de entrada, gerando uma de saida boleana se e' ou nao palindromo
       for(int i = 0; i < numEntrada; i+=2){
-         MyIO.println(html(entrada[i+1]));
-         MyIO.println(entrada[i]+"\n");
+        MyIO.print(contagem(entrada[i+1]));
+        MyIO.print(entrada[i]+"\n");
       }
    }
 }
