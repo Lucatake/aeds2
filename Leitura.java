@@ -12,6 +12,8 @@ class Leitura {
 
    public static String html(String link){
       String html = new String();
+
+      try {
       URL u = new URL(link);
       URLConnection uc = u.openConnection();
       InputStreamReader isr = new InputStreamReader(uc.getInputStream());
@@ -23,6 +25,13 @@ class Leitura {
       while (linha != null) { 
         html = html + br.readLine();
       } 
+      }
+
+      catch (IOException e) {
+
+        e.printStackTrace();
+    }
+    
       return html;
    }
 
