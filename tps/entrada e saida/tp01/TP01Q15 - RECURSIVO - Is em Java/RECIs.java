@@ -5,25 +5,28 @@ class Is {
    }
 
    public static boolean allVogal (String s){
+     return allVogal(s, 0);
+  }
+  public static boolean allVogal (String s, int i){
      boolean is = true;
      boolean vog = false;
      String vogais = new String();
-     vogais = "aeiouAEIOUÁÉÍÓÚáéíóúÀÈÌÒÙàèìòùãõÃÕÂÊÎÔÛâêîôû";
+     vogais = "aeiouAEIOU";
 
-     for (int i = 0; i < s.length(); i++) {
        int j = 0;
 
        do{
          if(is == true && !vog && s.charAt(i) == vogais.charAt(j)){
            vog = true;
            is = true;
+           is = allVogal(s, i++);
          } else{
            is = false;
          }
 
          j++;
-       } while(j<44 && !vog && is == true);
-     }
+       } while(j<10 && !vog && is == true);
+     
 
      return is;
   }
@@ -32,13 +35,15 @@ class Is {
      boolean is = true;
      boolean vog = false;
      String vogais = new String();
-     vogais = "aeiouAEIOUÁÉÍÓÚáéíóúÀÈÌÒÙàèìòùãõÃÕÂÊÎÔÛâêîôû";
+     vogais = "aeiouAEIOU";
+     String num = new String();
+     num = "0123456789";
 
      for (int i = 0; i < s.length(); i++) {
        int j = 0;
 
        do{
-         if(!vog && s.charAt(i) == vogais.charAt(j)){
+         if(!vog && s.charAt(i) == vogais.charAt(j) && s.charAt(i) != num.charAt(j)){
            vog = true;
            is = false;
          } else if(vog != true){
@@ -46,7 +51,7 @@ class Is {
          }
 
          j++;
-       } while(j<44 && !vog && is == true);
+       } while(j<10 && !vog && is == true);
      }
 
      return is;
