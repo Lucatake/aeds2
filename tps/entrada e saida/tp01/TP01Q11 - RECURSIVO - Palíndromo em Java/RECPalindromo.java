@@ -8,15 +8,22 @@ class RECPalindromo{
    }
 
    public static boolean isPalindromo (String s, int i){
-      boolean isP = false;
+      boolean isP = true;
+      int size = s.length()-1;
 
-      if(s.charAt(i) == s.charAt((s.length()-1)-i) && i < s.length()){
-        isP = true;
-        isP = isPalindromo(s, i+1);
-      } else{
-        isP = false;
+      if(i < size/2){
+        if(s.length() < 2){
+          isP = true;
+        } else{
+          if(s.charAt(i) == s.charAt(size-i)){
+            isP = true;
+            isP = isPalindromo(s, i+1);
+          } else{
+            isP = false;
+          }
+        }
       }
-
+      
       return isP;
    }
 
