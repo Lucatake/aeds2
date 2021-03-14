@@ -12,18 +12,18 @@ class Palindromo {
      return invert;
    }
 
-   public static String isPalindromo (String s){
+   public static boolean isPalindromo (String s){
       String invert = new String();
-      String isP = "SIM";
+      boolean isP = true;
       
       invert = invertida("", s);
  
       for (int i = 0; i < s.length(); i++) {
-        if(invert.charAt(i) == s.charAt(i) && isP == "SIM")
+        if(invert.charAt(i) == s.charAt(i) && isP == true)
         {
-          isP = "SIM";
+          isP = true;
         } else {
-          isP = "NAO";
+          isP = false;
         }
       }
 
@@ -42,7 +42,11 @@ class Palindromo {
 
       //Para cada linha de entrada, gerando uma de saida boleana se e' ou nao palindromo
       for(int i = 0; i < numEntrada; i++){
-         MyIO.println(isPalindromo(entrada[i]));
+        if(isPalindromo(entrada[i])){
+          MyIO.println("SIM");
+        } else {
+          MyIO.println("NAO");
+        }
       }
    }
 }
