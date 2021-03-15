@@ -10,7 +10,7 @@ class Is {
     String vogais = "aeiouAEIOU";
     int j = 0;
 
-    for(i = 0; i < s.length(); i++){
+    for(int i = 0; i < s.length(); i++){
       j = 0;
       vog = false;
 
