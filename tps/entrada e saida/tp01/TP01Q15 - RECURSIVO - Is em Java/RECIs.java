@@ -1,4 +1,4 @@
-class Is {
+class RECIs {
 
    public static boolean isFim(String s){
       return (s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M');
@@ -8,107 +8,121 @@ class Is {
      return allVogal(s, 0);
   }
   public static boolean allVogal (String s, int i){
-     boolean is = true;
-     boolean vog = false;
-     String vogais = new String();
-     vogais = "aeiouAEIOU";
+    boolean result = true;
+    boolean vog = false;
+    String vogais = "aeiouAEIOU";
+    int j = 0;
 
-       int j = 0;
+    if(i < s.length()){
+      j = 0;
+      vog = false;
 
-       do{
-         if(is == true && !vog && s.charAt(i) == vogais.charAt(j)){
-           vog = true;
-           is = true;
-           is = allVogal(s, i++);
-         } else{
-           is = false;
-         }
-
-         j++;
-       } while(j<10 && !vog && is == true);
-     
-
-     return is;
+      do{
+        if(s.charAt(i) == vogais.charAt(j) && !vog){
+          vog = true;
+          result = true && allVogal(s, i+1);
+        } else{
+          result = false;
+        }
+        j++;
+      } while(j < 10 && !vog);
+      if(!result){
+        i = s.length();
+      }
+    }
+    return result;
   }
 
    public static boolean allConsonant (String s){
-     boolean is = true;
-     boolean vog = false;
-     String vogais = new String();
-     vogais = "aeiouAEIOU";
-     String num = new String();
-     num = "0123456789";
+     return allConsonant(s, 0);
+  }
 
-     for (int i = 0; i < s.length(); i++) {
-       int j = 0;
+   public static boolean allConsonant (String s, int i){
+    boolean result = true;
+    boolean vog = false;
+    String vogais = "aeiouAEIOU";
+    String num = "0123456789";
+    int j = 0;
 
-       do{
-         if(!vog && s.charAt(i) == vogais.charAt(j) && s.charAt(i) != num.charAt(j)){
-           vog = true;
-           is = false;
-         } else if(vog != true){
-           is = true;
-         }
-
-         j++;
-       } while(j<10 && !vog && is == true);
-     }
-
-     return is;
+    if(i < s.length()){
+      j = 0;
+      do{
+        if((s.charAt(i) != vogais.charAt(j)) && (s.charAt(i) != num.charAt(j)) && !vog && (s.charAt(i)>'a'|| s.charAt(i)>'A') && (s.charAt(i)<='z'|| s.charAt(i)<='Z')){
+          result = true && allConsonant(s, i+1);
+        } else {
+          result = false;
+          vog = true;
+        }
+        j++;
+      } while(j < 10 && !vog);
+      if(!result){
+        i = s.length();
+      }
+    }
+    return result;
   }
 
    public static boolean allInt (String s){
-     boolean is = true;
-     boolean nums = false;
-     String num = new String();
-     num = "0123456789";
+     return allInt(s, 0);
+  }
 
-     for (int i = 0; i < s.length(); i++) {
-       int j = 0;
+   public static boolean allInt (String s, int i){
+    boolean result = true;
+    boolean n = false;
+    String nums = "0123456789";
+    int j = 0;
 
-       do{
-         if(is == true && !nums && s.charAt(i) == num.charAt(j)){
-           nums = true;
-           is = true;
-         } else{
-           is = false;
-         }
+    if(i < s.length()){
+      j = 0;
+      n = false;
 
-         j++;
-       } while(j<10 && !nums && is == true);
-       nums = false;
-     }
-
-     return is;
+      do{
+        if(s.charAt(i) == nums.charAt(j) && !n){
+          n = true;
+          result = true && allInt(s, i+1);
+        } else{
+          result = false;
+        }
+        j++;
+      } while(j < 10 && !n);
+      if(!result){
+        i = s.length();
+      }
+    }
+    return result;
   }
 
    public static boolean allReal (String s){
-     boolean is = true;
-     boolean nums = false;
-     boolean point = false;
-     String num = new String();
-     num = "0123456789";
+     return allReal(s, 0, false);
+  }
 
-     for (int i = 0; i < s.length(); i++) {
-       int j = 0;
+   public static boolean allReal (String s, int i, boolean point){
+    boolean result = true;
+    boolean n = false;
+    String nums = "0123456789";
+    int j = 0;
 
-       do{
-         if(is == true && !nums && s.charAt(i) == num.charAt(j)){
-           nums = true;
-           is = true;
-         } else if(s.charAt(i) =='.' && !point){
-           point = true;
-           is = true;
-         } else{
-           is = false;
-         }
+    if(i < s.length()){
+      j = 0;
+      n = false;
 
-         j++;
-       } while(j<10 && !nums && is == true);
-       nums = false;
-     }
-
-     return is;
+      do{
+        if(s.charAt(i) == nums.charAt(j) && !n){
+          n = true;
+          result = true && allReal(s, i+1, false);
+        } else if(!point && (s.charAt(i) == '.' || s.charAt(i) == ',')){
+          n = true;
+          result = true && allReal(s, i+1, true);
+        } else{
+          result = false;
+        }
+        j++;
+      } while(j < 10 && !n && !point);
+      if(!result){
+        i = s.length();
+      }
+    }
+    return result;
   }
 
    public static String isAll (String s){
