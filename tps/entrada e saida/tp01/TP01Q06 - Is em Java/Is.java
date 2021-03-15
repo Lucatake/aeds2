@@ -88,18 +88,18 @@ class Is {
     String nums = "0123456789";
     int j = 0;
 
-    for(i < s.length()){
+    for(int i = 0; i < s.length(); i++){
       j = 0;
       n = false;
 
       do{
         if(s.charAt(i) == nums.charAt(j) && !n){
           n = true;
-          result = true && allReal(s, i+1);
+          result = true;
         } else if(!(point == true) && (s.charAt(i) == '.' || s.charAt(i) == ',')){
           n = true;
           point = true;
-          result = true && allReal(s, i+1);
+          result = true;
         } else{
           result = false;
         }
