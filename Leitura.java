@@ -41,11 +41,9 @@ class Leitura {
 
    public static String contagem(String html){
      String result = new String();
-     int x = 0;
      int[] somas = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
      for(int i = 0; i < html.length(); i++){
        int a = (int)html.charAt(i);
-       x++;
        switch (a)
             {
               case 97:
