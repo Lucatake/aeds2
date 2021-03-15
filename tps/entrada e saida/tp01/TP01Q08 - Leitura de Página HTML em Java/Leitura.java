@@ -10,21 +10,23 @@ class Leitura {
       return (s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M');
    }
 
-   public static String html(String link){
+   public String htmlLink(String link){
+      String texto = new String();
       String html = new String();
       
+      
       try {
-        URL u = new URL(link);
-        URLConnection uc = u.openConnection();
+        URL url = new URL(link);
+        URLConnection uc = url.openConnection();
         InputStreamReader isr = new InputStreamReader(uc.getInputStream());
         BufferedReader br = new BufferedReader(isr);
 
+        texto = br.readLine(); 
 
-        String linha = br.readLine(); 
-
-        while (linha != null) { 
-          html = html + br.readLine();
-        } 
+        while (br.readLine() != null) { 
+          texto = br.readLine(); 
+          html = html + texto;
+        }
         br.close();
         isr.close();
       }
@@ -39,11 +41,10 @@ class Leitura {
 
    public static String contagem(String html){
      String result = new String();
-     int x = 0;
-     int[] somas = new int[1000];
-
+     int[] somas = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
      for(int i = 0; i < html.length(); i++){
        int a = (int)html.charAt(i);
+       
        switch (a)
             {
               case 97:
@@ -134,18 +135,17 @@ class Leitura {
                 somas[21] += 1;
                 break;
        
-              default: x = 1;
-                }
-              if(x == 1){
-                if(html.charAt(i) == '<' && html.charAt(i+1) == 'b' && html.charAt(i+2) == 'r' && html.charAt(i+3) == '>'){
-                  somas[23] = somas[23] + 1;
-                } else if(html.charAt(i) == '<' && html.charAt(i+1) == 't' && html.charAt(i+2) == 'a'&& html.charAt(i+2) == 'b'&& html.charAt(i+2) == 'l'&& html.charAt(i+2) == 'e' && html.charAt(i+3) == '>'){
-                  somas[24] = somas[24] + 1;
-                } else if(html.charAt(i) > 'a' && html.charAt(i) <= 'z'){
-                  somas[22] = somas[22] + 1;
-                }
-                x=0;
+              default: 
+                  if(html.charAt(i) == '<' && html.charAt(i+1) == 'b' && html.charAt(i+2) == 'r' && html.charAt(i+3) == '>'){
+                    somas[23] = somas[23] + 1;
+                  } else if(html.charAt(i) == '<' && html.charAt(i+1) == 't' && html.charAt(i+2) == 'a'&& html.charAt(i+2) == 'b'&& html.charAt(i+2) == 'l'&& html.charAt(i+2) == 'e' && html.charAt(i+3) == '>'){
+                    somas[24] = somas[24] + 1;
+                  } else if(html.charAt(i) > 'a' && html.charAt(i) <= 'z'){
+                    somas[22] = somas[22] + 1;
+                
             }
+              
+          }
      }
 
      result = "a("+somas[0]+") e("+somas[1]+") i("+somas[2]+") o("+somas[3]+") u("+somas[4]+") á("+somas[5]+") é("+somas[6]+") í("+somas[7]+") ó("+somas[8]+") ú("+somas[9]+") à("+somas[10]+") è("+somas[11]+") ì("+somas[12]+") ò("+somas[13]+") ù("+somas[14]+") ã("+somas[15]+") ã("+somas[16]+") â("+somas[17]+") ê("+somas[18]+") î("+somas[19]+") ô("+somas[20]+") û("+somas[21]+") consoante("+somas[22]+") <br>("+somas[23]+") <table>("+somas[24]+") ";
@@ -156,6 +156,9 @@ class Leitura {
    public static void main (String[] args){
       String[] entrada = new String[1000];
       int numEntrada = 0;
+      Leitura th = new Leitura();
+      String url = "";
+      String texto = new String();
 
       //Leitura da entrada padrao
       do {
@@ -165,7 +168,9 @@ class Leitura {
 
       //Para cada linha de entrada, gerando uma de saida boleana se e' ou nao palindromo
       for(int i = 0; i < numEntrada; i+=2){
-        MyIO.print(contagem(entrada[i+1]));
+        url = entrada[i+1];
+        
+        MyIO.print(contagem(th.htmlLink(url)));
         MyIO.print(entrada[i]+"\n");
       }
    }
