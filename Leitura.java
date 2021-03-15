@@ -44,6 +44,7 @@ class Leitura {
      int[] somas = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
      for(int i = 0; i < html.length(); i++){
        int a = (int)html.charAt(i);
+       
        switch (a)
             {
               case 97:

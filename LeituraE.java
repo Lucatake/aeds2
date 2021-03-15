@@ -45,6 +45,8 @@ class LeituraE {
 
      for(int i = 0; i < html.length(); i++){
        
+       MyIO.print(html.charAt(i));
+       MyIO.print((int)html.charAt(i)+"\n");
        switch (html.charAt(i))
             {
               case 'a':
