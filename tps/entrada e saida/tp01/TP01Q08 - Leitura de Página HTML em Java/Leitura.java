@@ -67,71 +67,71 @@ class Leitura {
                 somas[4] += 1;
                 break;
 
-              case 160:
+              case 225:
                 somas[5] += 1;
                 break;
 
-              case 130:
+              case 233:
                 somas[6] += 1;
                 break;
                 
-              case 161:
+              case 237:
                 somas[7] += 1;
                 break;
 
-              case 162:
+              case 243:
                 somas[8] += 1;
                 break;
 
-              case 163:
+              case 250:
                 somas[9] += 1;
                 break;
 
-              case 133:
+              case 224:
                 somas[10] += 1;
                 break;
 
-              case 138:
+              case 232:
                 somas[11] += 1;
                 break;
                 
-              case 141:
+              case 236:
                 somas[12] += 1;
                 break;
 
-              case 149:
+              case 242:
                 somas[13] += 1;
                 break;
 
-              case 151:
+              case 249:
                 somas[14] += 1;
                 break;
 
-              case 198:
+              case 227:
                 somas[15] += 1;
                 break;
 
-              case 228:
+              case 245:
                 somas[16] += 1;
                 break;
 
-              case 131:
+              case 226:
                 somas[17] += 1;
                 break;
 
-              case 136:
+              case 234:
                 somas[18] += 1;
                 break;
                 
-              case 140:
+              case 238:
                 somas[19] += 1;
                 break;
 
-              case 147:
+              case 244:
                 somas[20] += 1;
                 break;
 
-              case 150:
+              case 251:
                 somas[21] += 1;
                 break;
        
