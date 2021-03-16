@@ -21,9 +21,9 @@ class Arquivo {
       RandomAccessFile arqR = new RandomAccessFile("nums.txt", "rw");
 
       //Para cada linha gravada, ler e mostrar a saida
-      i = 640;
+      i = 632;
       aux= 0;
-      while(arqR.read() > -1 && i > 0){
+      while(arqR.read() > -1 && i >= 0){
         //Ler de arquivo
           arqR.seek(i);
           num = arqR.readDouble();
