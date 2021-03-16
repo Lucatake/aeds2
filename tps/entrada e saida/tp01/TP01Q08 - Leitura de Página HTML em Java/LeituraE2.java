@@ -10,34 +10,34 @@ class Leitura {
       return (s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M');
    }
 
-    static String htmls;
-
-   public String capturaHTML(String url) {
-
-    htmls = "";
-    
-    try {
-        
-        URL u = new URL(url);
-        URLConnection uc = u.openConnection();
+   public String htmlLink(String link){
+      String texto = new String();
+      String html = new String();
+      
+      
+      try {
+        URL url = new URL(link);
+        URLConnection uc = url.openConnection();
         InputStreamReader isr = new InputStreamReader(uc.getInputStream());
         BufferedReader br = new BufferedReader(isr);
-        
-        String inputLine;
-        while ((inputLine = br.readLine()) != null) {
-            htmls += (inputLine + "\n");
-        }
-            br.close();
-            isr.close();
-            
-        } catch (IOException e) {
-            
-            e.printStackTrace();
-        }
-        
-        return url;
 
-}
+        texto = br.readLine(); 
+
+        while (br.readLine() != null) { 
+          texto = br.readLine(); 
+          html = html + texto;
+        }
+        br.close();
+        isr.close();
+      }
+
+      catch (IOException e) {
+
+        e.printStackTrace();
+    }
+      MyIO.print(html+"\n\n");
+      return html;
+   }
 
    public static String contagem(String html){
      String result = new String();
@@ -136,14 +136,15 @@ class Leitura {
                 break;
        
               default: 
-                  if(html.charAt(i) > 'a' && html.charAt(i) <= 'z'){
-                    somas[22] = somas[22] + 1;
-            }
-            if(html.charAt(i) == '<' && html.charAt(i+1) == 'b' && html.charAt(i+2) == 'r' && html.charAt(i+3) == '>'){
-                    somas[23] = somas[23] + 1;
-                  } else if(html.charAt(i) == '<' && html.charAt(i+1) == 't' && html.charAt(i+2) == 'a'&& html.charAt(i+3) == 'b'&& html.charAt(i+4) == 'l'&& html.charAt(i+5) == 'e' && html.charAt(i+6) == '>'){
-                    somas[24] = somas[24] + 1;
-                  }
+              if(html.charAt(i) > 'a' && html.charAt(i) <= 'z'){
+                somas[22] = somas[22] + 1;
+              }
+                  
+          }
+          if(html.charAt(i) == '<' && html.charAt(i+1) == 't' && html.charAt(i+2) == 'a'&& html.charAt(i+3) == 'b'&& html.charAt(i+4) == 'l'&& html.charAt(i+5) == 'e'){
+                somas[24] = somas[24] + 1;
+          } else if(html.charAt(i) == '<' && html.charAt(i+1) == 'b' && html.charAt(i+2) == 'r' && html.charAt(i+3) == '>'){
+                somas[23] = somas[23] + 1;
           }
      }
 
@@ -165,12 +166,11 @@ class Leitura {
       } while (isFim(entrada[numEntrada++]) == false);
       numEntrada--;   //Desconsiderar ultima linha contendo a palavra FIM
 
-      //Para cada site, gerando uma de saida da quantidade de cada caractere
+      //Para cada linha de entrada, gerando uma de saida boleana se e' ou nao palindromo
       for(int i = 0; i < numEntrada; i+=2){
         url = entrada[i+1];
-        th.capturaHTML(url);
         
-        MyIO.print(contagem(htmls));
+        MyIO.print(contagem(th.htmlLink(url)));
         MyIO.print(entrada[i]+"\n");
       }
    }
