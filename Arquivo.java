@@ -23,7 +23,7 @@ class Arquivo {
       //Para cada linha gravada, ler e mostrar a saida
       i = (numEntrada*8)-8;
       aux= 0;
-      while(arqR.read() > -1 && i >= 0){
+      while(i >= 0){
         //Ler de arquivo
           arqR.seek(i);
           num = arqR.readDouble();
