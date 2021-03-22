@@ -27,7 +27,7 @@ class Arquivo {
         //Ler de arquivo
           arqR.seek(i);
           num = arqR.readDouble();
-          MyIO.println(num);
+          MyIO.printf("%.g\n",num);
           i-=8;
           aux++;
       }
