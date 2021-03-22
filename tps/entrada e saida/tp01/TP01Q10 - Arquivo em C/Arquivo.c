@@ -27,7 +27,7 @@ int main( )
     //Ler de arquivo
     fseek(fr, i, SEEK_SET);
     fread(&num, sizeof(double), 1, fr);
-    printf("%lf\n", num);
+    printf("%.6g\n", num);
     i-=8;
     aux++;
     rewind(fr);
