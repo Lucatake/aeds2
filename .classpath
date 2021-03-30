@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="fonte/u07 Árvores binárias/java/arvoreBinariaJava/|tps/entrada e saida/tp01/TP01Q08 - Leitura de Página HTML em Java/|fonte/u08 Balanceamento de árvores/java/alvinegra/|fonte/u10 Árvores TRIE/java/trieVariacoes/trieAB/|fonte/u04 Ordenação em memória principal/java/|tps/entrada e saida/tp01/TP01Q15 - RECURSIVO - Is em Java/|fonte/u09 Tabelas e dicionários/java/hashDiretoRehash/|tps/entrada e saida/tp01/TP01Q05 - Álgebra Booleana em Java/|tps/entrada e saida/tp01/TP01Q09 - Arquivo em Java/|fonte/u00 Nivelamento/java/recursividade/|fonte/u06 Estruturas de dados básicas flexíveis/java/listadupla/|fonte/u10 Árvores TRIE/java/trieVariacoes/trieHashAceitandoPrefixo/|fonte/u05 Estruturas de dados basicas lineares/java/|tps/entrada e saida/tp01/TP01Q13 - RECURSIVO - Ciframento em Java/|tps/entrada e saida/tp01/TP01Q11 - RECURSIVO - Palíndromo em Java/|fonte/ajuda/java/|fonte/u10 Árvores TRIE/java/patricia/|fonte/u00 Nivelamento/java/argumentoMain/|fonte/u00 Nivelamento/java/entradaSaida/|labs/lab01/entradaSaida/LAB01Q01 - Aquecimento/|fonte/u07 Árvores binárias/java/arvoreBinariaDeLista/|fonte/u06 Estruturas de dados básicas flexíveis/java/pilha/|fonte/u09 Tabelas e dicionários/java/doidona/|fonte/u00 Nivelamento/java/tratamentoExcecao/|fonte/u09 Tabelas e dicionários/java/hashDiretoReserva/|fonte/u06 Estruturas de dados básicas flexíveis/java/fila/|tps/entrada e saida/tp01/TP01Q06 - Is em Java/|fonte/u08 Balanceamento de árvores/java/avl/|fonte/u00 Nivelamento/java/classeObjeto/|fonte/u10 Árvores TRIE/java/trie/|fonte/u00 Nivelamento/java/ponteiro/|fonte/u06 Estruturas de dados básicas flexíveis/java/matriz/|tps/entrada e saida/tp01/TP01Q03 - Ciframento em Java/|tps/entrada e saida/tp01/TP01Q04 - Alteração Aleatória em Java/|fonte/u06 Estruturas de dados básicas flexíveis/java/TADs Nativos em Java/|fonte/u01 Introdução/java/|fonte/u06 Estruturas de dados básicas flexíveis/java/coletalixo/|tps/entrada e saida/tp01/TP01Q01 - Palíndromo em Java/|fonte/u06 Estruturas de dados básicas flexíveis/java/listasimples/|fonte/u07 Árvores binárias/java/arvoreArvore/|fonte/u00 Nivelamento/java/arquivo/|fonte/u09 Tabelas e dicionários/java/hashIndiretoLista/|fonte/u10 Árvores TRIE/java/trieVariacoes/trieListaFlexivel/|tps/entrada e saida/tp02/TP02Q01 - Classe em Java/|tps/entrada e saida/tp02/TP02Q01 - Classe em Java/" kind="src" path=""/>
+	<classpathentry kind="src" path="fonte/ajuda/java"/>
+	<classpathentry kind="src" path="fonte/u00 Nivelamento/java/argumentoMain"/>
+	<classpathentry kind="src" path="fonte/u00 Nivelamento/java/arquivo"/>
+	<classpathentry kind="src" path="fonte/u00 Nivelamento/java/classeObjeto"/>
+	<classpathentry kind="src" path="fonte/u00 Nivelamento/java/entradaSaida"/>
+	<classpathentry kind="src" path="fonte/u00 Nivelamento/java/ponteiro"/>
+	<classpathentry kind="src" path="fonte/u00 Nivelamento/java/recursividade"/>
+	<classpathentry kind="src" path="fonte/u00 Nivelamento/java/tratamentoExcecao"/>
+	<classpathentry kind="src" path="fonte/u01 Introdução/java"/>
+	<classpathentry kind="src" path="fonte/u04 Ordenação em memória principal/java"/>
+	<classpathentry kind="src" path="fonte/u05 Estruturas de dados basicas lineares/java"/>
+	<classpathentry kind="src" path="fonte/u06 Estruturas de dados básicas flexíveis/java/coletalixo"/>
+	<classpathentry kind="src" path="fonte/u06 Estruturas de dados básicas flexíveis/java/fila"/>
+	<classpathentry kind="src" path="fonte/u06 Estruturas de dados básicas flexíveis/java/listadupla"/>
+	<classpathentry kind="src" path="fonte/u06 Estruturas de dados básicas flexíveis/java/listasimples"/>
+	<classpathentry kind="src" path="fonte/u06 Estruturas de dados básicas flexíveis/java/matriz"/>
+	<classpathentry kind="src" path="fonte/u06 Estruturas de dados básicas flexíveis/java/pilha"/>
+	<classpathentry kind="src" path="fonte/u06 Estruturas de dados básicas flexíveis/java/TADs Nativos em Java"/>
+	<classpathentry kind="src" path="fonte/u07 Árvores binárias/java/arvoreArvore"/>
+	<classpathentry kind="src" path="fonte/u07 Árvores binárias/java/arvoreBinariaDeLista"/>
+	<classpathentry kind="src" path="fonte/u07 Árvores binárias/java/arvoreBinariaJava"/>
+	<classpathentry kind="src" path="fonte/u08 Balanceamento de árvores/java/alvinegra"/>
+	<classpathentry kind="src" path="fonte/u08 Balanceamento de árvores/java/avl"/>
+	<classpathentry kind="src" path="fonte/u09 Tabelas e dicionários/java/doidona"/>
+	<classpathentry kind="src" path="fonte/u09 Tabelas e dicionários/java/hashDiretoRehash"/>
+	<classpathentry kind="src" path="fonte/u09 Tabelas e dicionários/java/hashDiretoReserva"/>
+	<classpathentry kind="src" path="fonte/u09 Tabelas e dicionários/java/hashIndiretoLista"/>
+	<classpathentry kind="src" path="fonte/u10 Árvores TRIE/java/patricia"/>
+	<classpathentry kind="src" path="fonte/u10 Árvores TRIE/java/trie"/>
+	<classpathentry kind="src" path="fonte/u10 Árvores TRIE/java/trieVariacoes/trieAB"/>
+	<classpathentry kind="src" path="fonte/u10 Árvores TRIE/java/trieVariacoes/trieHashAceitandoPrefixo"/>
+	<classpathentry kind="src" path="fonte/u10 Árvores TRIE/java/trieVariacoes/trieListaFlexivel"/>
+	<classpathentry kind="src" path="labs/lab01/entradaSaida/LAB01Q01 - Aquecimento"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q01 - Palíndromo em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q03 - Ciframento em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q04 - Alteração Aleatória em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q05 - Álgebra Booleana em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q06 - Is em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q08 - Leitura de Página HTML em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q09 - Arquivo em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q11 - RECURSIVO - Palíndromo em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q13 - RECURSIVO - Ciframento em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp01/TP01Q15 - RECURSIVO - Is em Java"/>
+	<classpathentry kind="src" path="tps/entrada e saida/tp02/TP02Q01 - Classe em Java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,2 @@
+module classe {
+}
