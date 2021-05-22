@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class Track {
+public class Musica {
 
 	// (0)valence,(1)year,(2)acousticness,(3)artists,(4)danceability,(5)duration_ms,(6)energy,
 	// (7)explicit,(8)id,(9)instrumentalness,(10)key,(11)liveness,(12)loudness,(13)mode,
@@ -26,11 +26,11 @@ public class Track {
 	private double speechiness; // 17
 	private int year; // 1
 
-	public Track() {
+	public Musica() {
 		this.id = "";
 	}
 
-	public Track(String[] values) throws ParseException {
+	public Musica(String[] values) throws ParseException {
 		this.id = values[8]; // 8
 		this.nome = values[14]; // 14
 		this.key = values[10]; // 10
@@ -206,8 +206,8 @@ public class Track {
 	}
 
 	
-	public Track clone() {
-		Track novo = new Track();
+	public Musica clone() {
+		Musica novo = new Musica();
 		novo.nome = this.nome;
 		novo.id = this.id;
 		novo.key = this.key;

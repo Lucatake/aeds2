@@ -7,7 +7,7 @@ import java.text.ParseException;
 public class Template {
 
 	// funcao que simula um construtor
-	public static Track cadastra(String dadosMusica) throws ParseException {
+	public static Musica cadastra(String dadosMusica) throws ParseException {
 		String campos[] = new String[19];
 		int j = 0;
 		String temp = "";
@@ -22,16 +22,16 @@ public class Template {
 			j++;
 			campos[i] = temp;
 		}
-		Track musica = new Track(campos);
+		Musica musica = new Musica(campos);
 		
 		return musica;
 	}
 
 	/*
-	 * leitura das musicas e geracao dos objetos Track
+	 * leitura das musicas e geracao dos objetos Musica
 	 */
-	public static Track[] inserirPlaylist(int quantidade, String idList[], String totalMusicList[]) throws ParseException {
-		Track musicas[] = new Track[quantidade];
+	public static Musica[] inserirPlaylist(int quantidade, String idList[], String totalMusicList[]) throws ParseException {
+		Musica musicas[] = new Musica[quantidade];
 		for (int i = 0; i < quantidade; i++) {
 			for (int j = 0; j < totalMusicList.length; j++) {
 				if (totalMusicList[j].contains(idList[i])) {
@@ -87,9 +87,9 @@ public class Template {
 		int playlistTam = entradaPadrao(idList);
 		// leitura de todas as musicas do arquivo de entrada /tmp/data.csv
 		String totalMusicList[] = ler();
-		Track musicas[] = inserirPlaylist(playlistTam, idList, totalMusicList);
+		Musica musicas[] = inserirPlaylist(playlistTam, idList, totalMusicList);
 		
-		for(Track musica:musicas)
+		for(Musica musica:musicas)
 			musica.imprimir();	
 	}
 
