@@ -1,7 +1,5 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.text.ParseException;
 
 class ListaMusica {
@@ -10,7 +8,8 @@ class ListaMusica {
 
   //Construtor vazio
   public ListaMusica() {
-    this(80);
+    this(100);
+    n = 0;
   }
 
   //Construtor 
@@ -65,7 +64,9 @@ class ListaMusica {
   //Remover musica no fim
   public Musica removerFim( ) {
     if (n > 0) {
-      return musicas[n-1];     
+    	n--;
+    	return musicas[n-1];  
+    }
     return null;
   }
 
@@ -75,7 +76,7 @@ class ListaMusica {
       Musica musica = musicas[posicao];
       n--;
 
-      for(int i = n; i > posicao; i--)
+      for(int i = posicao; i <n; i++)
         musicas[i]= musicas[i+1];
         
       return musica;      
@@ -85,11 +86,13 @@ class ListaMusica {
 
   //Mostrar lista de musicas
   public void mostrar( ) {
-    int quat = 0;
     for(int i = 0; i < n; i++)
-    MyIO.println("[" + quat + "] " + musicas[i]);
+    	MyIO.println("[" + i + "] " + musicas[i].toString());
   }
 
+  	public int getQuantidade() {
+  		return this.n;
+  	}
 
 }
 
@@ -99,17 +102,16 @@ public class TP03Q1 {
         return (s.length() == 3 && s.charAt(0) == 'F' && s.charAt(1) == 'I' && s.charAt(2) == 'M');
   }
 
-	public static Musica procura(String id) throws Exception {
-    Musica music = new Musica();
-		FileReader arquivo = new FileReader("./tmp/data.csv");
+	public static String procura(String id) throws Exception {
+		String music = new String();
+		FileReader arquivo = new FileReader("../data.csv");
 		BufferedReader ler = new BufferedReader(arquivo);
 		String linha = ler.readLine();
-		linha = ler.readLine();
-		int i = 0;
-		while (linha != null && musica.getId() != id) {
-			music = linha;
+		
+		while (linha != null) {
+			if(linha.contains(id))
+				music = linha;
 			linha = ler.readLine();
-			i++;
 		}
 		arquivo.close();
 		return music;
@@ -117,23 +119,72 @@ public class TP03Q1 {
 
 
   
-  public static void main (String[] args) {
-      String[] cdM = new String();
+  public static void main (String[] args) throws ParseException, Exception {
+      String[] cdM = new String[80];
       int q = 0;
       ListaMusica ms = new ListaMusica();
+      int quant = 0;
+      String line = new String();
+      String meto = new String();
+      String id = new String();
+      int pos = 0;
+      Musica musR = new Musica();
 
+      //Criação da Lista
       //Leitura da entrada padrao (codigos das musicas)
       do {
          cdM[q] = MyIO.readLine();
-      } while (isFim(lm[q++]) == false);
+      } while (isFim(cdM[q++]) == false);
 
       //Ler musicas nos arquivos e criar lista (inserir elementos fim)
-      for(int i = 0; i < q; i++){
-        ms.inserirFim(procura(cdM[i]).toString());
+      for(int i = 0; i < q-1; i++)
+        ms.inserirFim(Musica.cadastra(procura(cdM[i])));
+
+      //Execução dos Métodos
+      //Ler quantidade de registros inseridos/removidos
+      quant = (int)MyIO.readInt();
+      
+      for(int i = 0; i < quant; i++) {
+    	  line = MyIO.readLine();
+    	  meto = line.substring(0, 2);
+    	  if(meto.equals("I*")) {
+    		  pos = Integer.parseInt(line.substring(3,5));
+    		  id = line.substring(6);
+    	  } else if (meto.equals("R*")) {
+    		  pos = Integer.parseInt(line.substring(3,5));
+    	  }  else if (meto.equals("RI") || meto.contains("RF")) {
+    		  id = null;
+    	  } else {
+    		  id = line.substring(3);
+    	  }
+    	  
+    	  switch (meto) {
+	    	  case "II":
+				  ms.inserirInicio(Musica.cadastra(procura(id)));
+				  break;
+	    	  case "I*":
+	    		  ms.inserir(Musica.cadastra(procura(id)), pos);
+    			  break;
+	    	  case "IF":
+	    		  ms.inserirFim(Musica.cadastra(procura(id)));
+				  break;
+	    	  case "RI":
+	    		  musR = ms.removerInicio();
+	    		  MyIO.println("(R) " + musR.getNome());
+				  break;
+	    	  case "R*":
+	    		  musR = ms.remover(pos);
+	    		  MyIO.println("(R) " + musR.getNome());
+    			  break;
+	    	  case "RF":
+	    		  musR = ms.removerFim();
+	    		  MyIO.println("(R) " + musR.getNome());
+				  break;
+    	  }
       }
-
-      musicas.mostrar();
-
+      
+      
+      ms.mostrar();
   }
 
 

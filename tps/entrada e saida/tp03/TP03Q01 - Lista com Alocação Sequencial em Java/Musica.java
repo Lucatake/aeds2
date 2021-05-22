@@ -240,4 +240,26 @@ public class Musica {
 				+ " ## " + danceability + " ## " + instrumentalness + " ## " + liveness + " ## " + loudness + " ## "
 				+ speechiness + " ## " + energy + " ## " + duration;
 	}
+	
+	
+	// funcao que simula um construtor
+	public static Musica cadastra(String dadosMusica) throws ParseException {
+		String campos[] = new String[19];
+		int j = 0;
+		String temp = "";
+		for (int i = 0; i < 19; i++) {
+			temp = "";
+			while (j < dadosMusica.length() && ((dadosMusica.charAt(j) != ',')
+					|| !(dadosMusica.charAt(j) == ',' && dadosMusica.charAt(j + 1) != ' '))) {
+				if (dadosMusica.charAt(j) != '"')
+					temp += dadosMusica.charAt(j);
+				j++;
+			}
+			j++;
+			campos[i] = temp;
+		}
+		Musica musica = new Musica(campos);
+		
+		return musica;
+	}
 }
