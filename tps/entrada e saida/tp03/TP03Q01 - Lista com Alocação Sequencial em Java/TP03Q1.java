@@ -367,7 +367,7 @@ public class TP03Q1 {
 
 	public static String procura(String id) throws Exception {
 		String music = new String();
-		FileReader arquivo = new FileReader("../data.csv");
+		FileReader arquivo = new FileReader("/tmp/data.csv");
 		BufferedReader ler = new BufferedReader(arquivo);
 		String linha = ler.readLine();
 		
