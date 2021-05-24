@@ -297,7 +297,9 @@ class PilhaDinamicaMusica {
 
   //Empilhar musica
   public void empilhar(Musica musica) {
-    topo = new Celula(musica, topo);
+	Celula aux = new Celula(musica);
+	aux.prox = topo;
+    topo = aux;
     q++;
     
   }
@@ -314,14 +316,19 @@ class PilhaDinamicaMusica {
   }
 
   //Mostrar pilha de musicas
-  public void mostrar( ) {
-	  Celula aux = new Celula();
+  public void mostrar() {
+		mostrar(topo);
+  }
+  
+  private void mostrar(Celula aux) {
 	  int i = 0;
-    for(aux = topo; aux != null; aux=aux.prox) {
+    if(aux != null) {
+    	mostrar(aux.prox);
     	MyIO.println("[" + i + "] " + aux.musica.toString());
     	i++;
     }
   }
+  
 
   	public int getQuantidade() {
   		return q;
@@ -371,7 +378,7 @@ public class TP03Q5 {
       //Ler musicas nos arquivos e criar pilha (empilhar)
       for(int i = 0; i < q-1; i++)
         ms.empilhar(Musica.cadastra(procura(cdM[i])));
-
+    
       //Execução dos Métodos
       //Ler quantidade de registros inseridos/removidos
       quant = (int)MyIO.readInt();
